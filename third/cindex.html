@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prashant's Page</title>
+    <style>
+        .box{
+            width: 300px; /* Width of the box */
+            height: 200px; /* Height of the box */
+            background-color: lightblue; /* Background color */
+            border: 2px solid black; /* Border around the box */
+            padding: 20px; /* Space inside the border */
+            margin: 20px; /* Space outside the box */
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3); /* Shadow effect */
+            text-align: center; /* Center text inside the box */
+           
+        }
+        p,
+        h1 {
+            background-color: aqua;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        form {
+            background-color: bisque;
+            margin: 0;
+            padding: 1em;
+            /* Added padding for better spacing */
+            font-style: italic;
+            /* Corrected property name */
+        }
+
+        img {
+            width: 500px;
+            /* Corrected attribute name */
+            height: 400px;
+        }
+
+        table {
+            border-collapse: collapse;
+            /* Ensures table borders don’t double up */
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        h2 {
+            margin-top: 20px;
+            /* Added margin for better spacing */
+        }
+    </style>
+    <script>
+        function addChildFields() {
+            const numberOfChildren = document.getElementById("numChildren").value;
+            const childInputs = document.getElementById("childInputs");
+
+            // Clear previous inputs
+            childInputs.innerHTML = "";
+
+            // Add new child inputs based on the number of children
+            for (let i = 1; i <= numberOfChildren; i++) {
+                const input = document.createElement("input");
+                input.type = "text";
+                input.name = `child${i}`;
+                input.placeholder = `Child ${i} Name`;
+                childInputs.appendChild(input);
+                childInputs.appendChild(document.createElement("br"));
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <h1>this is box</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores sed ratione laborum, sapiente similique
+            iste aperiam labore eligendi a aspernatur nisi ipsum facere.</p>
+
+    </div>
+    <h1>Family Information Form</h1>
+    <form>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required> <br><br>
+
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" required> <br><br>
+
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" required> <br><br>
+
+        <label for="fathersName">Father's Name</label>
+        <input type="text" id="fathersName" name="fathername" required> <br><br>
+
+        <label for="mothersName">Mother's Name</label>
+        <input type="text" id="mothersName" name="mothersName" required><br><br>
+
+        <label for="numChildren">Number of Children</label>
+        <input type="number" id="numChildren" name="numChildren" min="0" max="10" oninput="addChildFields()"
+            required><br><br>
+
+        <div id="childInputs"></div>
+        <input type="submit" value="Submit">
+    </form> <br><br>
+
+    <form>
+        <label for="username">Name</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" required><br><br>
+
+        <label for="fathername">Father's Name</label>
+        <input type="text" id="fathername" name="fathername" required><br><br>
+
+        <label for="mothername">Mother's Name</label>
+        <input type="text" id="mothername" name="mothername" required>
+        <input type="submit" value="Submit">
+    </form><br><br>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste corrupti repellendus repellat, pariatur illo
+        explicabo rerum unde harum temporibus vero, illum eum recusandae porro. Quas quaerat nisi culpa eum facere ullam
+        totam voluptate porro?</p><br><br>
+
+    <img src="tree.jpg" alt="tree"><br><br><br>
+
+    <a href="https://www.google.com">Visit here</a><br><br>
+
+    <table>
+        <tr>
+            <th>Class</th>
+            <th>Name</th>
+            <th>Roll No</th>
+            <th>Day</th>
+        </tr>
+        <tr>
+            <td>Six</td>
+            <td>Prashant</td>
+            <td>45</td>
+            <td>Monday</td>
+        </tr>
+        <tr>
+            <td>Favorite Food</td>
+            <td>Phone Name</td>
+            <td>Fruit</td>
+            <td>Game</td>
+        </tr>
+        <tr>
+            <td>Pizza</td>
+            <td>iPhone</td>
+            <td>Apple</td>
+            <td>Cricket</td>
+        </tr>
+    </table><br><br>
+
+    <table>
+        <tr>
+            <th>Class</th>
+            <th>Name</th>
+            <th>Sex</th>
+            <th>Day</th>
+        </tr>
+        <tr>
+            <td>Five</td>
+            <td>Prashant</td>
+            <td>Male</td>
+            <td>Friday</td>
+        </tr>
+    </table>
+
+    <h1>Types of Lists in HTML</h1>
+
+    <!-- Ordered List -->
+    <h2>Ordered List of My Top 3 Favorite Movies</h2>
+    <ol>
+        <li>The Shawshank Redemption</li>
+        <li>Inception</li>
+        <li>The Dark Knight</li>
+    </ol>
+
+    <!-- Unordered List -->
+    <h2>Unordered List of My Hobbies</h2>
+    <ul>
+        <li>Reading</li>
+        <li>Playing Football</li>
+        <li>Listening to Music</li>
+    </ul>
+
+    <!-- Nested List -->
+    <h2>Nested List of My Daily Routine</h2>
+    <ul>
+        <li>Morning
+            <ul>
+                <li>Wake up</li>
+                <li>Exercise</li>
+                <li>Breakfast</li>
+            </ul>
+        </li>
+        <li>Afternoon
+            <ul>
+                <li>Work/Study</li>
+                <li>Lunch</li>
+                <li>Short Walk</li>
+            </ul>
+        </li>
+        <li>Evening
+            <ul>
+                <li>Dinner</li>
+                <li>Relax</li>
+                <li>Sleep</li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- Definition List -->
+    <h2>Definition List of Some Terms</h2>
+    <dl>
+        <dt>HTML</dt>
+        <dd>HyperText Markup Language</dd>
+
+        <dt>CSS</dt>
+        <dd>Cascading Style Sheets</dd>
+
+        <dt>JavaScript</dt>
+        <dd>A programming language commonly used in web development</dd>
+    </dl>
+
+    <br><br>
+
+    <ol>
+        <h2>This is the Name of Person</h2>
+        <li>Prashant</li>
+        <li>Shruti</li>
+        <li>Nishant</li>
+        <li>Ishant</li>
+    </ol>
+    <br><br>
+
+    <ul>
+        <h2>This is the Fruit List</h2>
+        <li>Mango</li>
+        <li>Apple</li>
+        <li>Guava</li>
+        <li>Grapes</li>
+    </ul>
+
+    <h2>The List of the Day</h2>
+    <ul>
+        <li>Morning
+            <ul>
+                <li>Breakfast</li>
+                <li>Dinner</li>
+                <li>Food</li>
+            </ul>
+        </li>
+        <li>Afternoon
+            <ul>
+                <li>Good</li>
+                <li>Bad</li>
+                <li>Lorem, ipsum.</li>
+                <li>Lorem.</li>
+            </ul>
+        </li>
+        <li>Night
+            <ol>
+                <li>This is my day which I am making</li>
+                <li>Lorem ipsum

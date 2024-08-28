@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prashant Kumar</title>
+    <link rel="prashant" href="exid.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ff6347;
+        }
+
+        .container {
+            display: flex;
+            margin: 20px 0;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 15px;
+        }
+
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            display: block;
+            padding: 5px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #34495e;
+        }
+
+        .content {
+            flex: 1;
+            margin-left: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        fieldset {
+            border: none;
+            margin-bottom: 15px;
+            padding: 0;
+        }
+
+        legend {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="email"], input[type="tel"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            opacity: 0.9;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">MyPCWebsite</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Sidebar</h2>
+            <ul>
+                <li><a href="#link1">Link 1</a></li>
+                <li><a href="#link2">Link 2</a></li>
+                <li><a href="#link3">Link 3</a></li>
+                <li><a href="#link4">Link 4</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <section id="home">
+                <h1>Welcome to My PC Optimized Website</h1>
+                <p>This website is designed specifically for desktop users.</p>
+            </section>
+            <!-- Add more content sections as needed -->
+        </main>
+    </div>
+
+    <div class="image-container">
+        <img src="tree.jpg" alt="This is the image">
+    </div>
+
+    <h1>Web Development Students</h1>
+    <form action="submit_details.php" method="post">
+        <!-- Loop through student fields using a template -->
+        <template id="student-template">
+            <fieldset>
+                <legend>Student <span class="student-number"></span></legend>
+                <label>Name: <input type="text" name="name[]" required></label>
+                <label>Email: <input type="email" name="email[]" required></label>
+                <label>Phone: <input type="tel" name="phone[]" required></label>
+                <input type="hidden" name="course[]" value="Web Development">
+            </fieldset>
+        </template>
+
+        <!-- JavaScript to replicate student fields -->
+        <script>
+            const template = document.getElementById('student-template');
+            for (let i = 1; i <= 5; i++) {
+                const clone = template.content.cloneNode(true);
+                clone.querySelector('.student-number').textContent = i;
+                document.querySelector('form').appendChild(clone);
+            }
+        </script>
+
+        <input type="submit" value="Submit Details">
+    </form>
+
+    <footer>
+        <p>&copy; 2024 MyPCWebsite. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
