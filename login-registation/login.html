@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +13,21 @@
 </head>
 
 <body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <h1>Welcome to Our Website</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
     <div class="container">
         <div class="form-box">
             <!-- Login Form -->
@@ -23,8 +40,7 @@
                     <input type="password" required placeholder="Password">
                 </div>
                 <button type="submit">Login</button>
-                <p class="toggle-form">Don't have an account? <a href="#" onclick="toggleForm('register')">Register
-                        here</a></p>
+                <p class="toggle-form">Don't have an account? <a href="#" onclick="toggleForm('register')">Register here</a></p>
             </form>
 
             <!-- Register Form -->
@@ -43,11 +59,23 @@
                     <input type="password" required placeholder="Confirm Password">
                 </div>
                 <button type="submit">Register</button>
-                <p class="toggle-form">Already have an account? <a href="#" onclick="toggleForm('login')">Login here</a>
-                </p>
+                <p class="toggle-form">Already have an account? <a href="#" onclick="toggleForm('login')">Login here</a></p>
             </form>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Your Website. All rights reserved.</p>
+            <nav>
+                <ul>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
