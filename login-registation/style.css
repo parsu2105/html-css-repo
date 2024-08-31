@@ -1,6 +1,6 @@
 /* Basic Reset */
 * {
-    margin: 0;
+    margin: 10;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
@@ -45,17 +45,17 @@ body {
 
 .input-box input {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
+    padding: 15px;
+    border: 1px solid black;
     border-radius: 5px;
 }
 
 button {
-    padding: 10px;
-    background-color: #007bff;
+    padding: 20px;
+    background-color: black;
     border: none;
     color: white;
-    border-radius: 5px;
+    border-radius: 80px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
